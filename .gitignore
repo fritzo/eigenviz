@@ -1,0 +1,6 @@
+*.o
+*.map
+*.graph
+src/make_map
+src/view_map
+
