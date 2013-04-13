@@ -299,17 +299,18 @@ void MapView::draw ()
       Edge & edge = m_edges[e];
       Point & head = m_points[edge.head];
       Point & tail = m_points[edge.tail];
+      float opacity = std::min(edge.weight, 1.f);
 
       glColor4f(color_map(head.color[0]),
                 color_map(head.color[1]),
                 color_map(head.color[2]),
-                EDGE_OPACITY);
+                opacity);
       glVertex3fv(head.pos);
 
       glColor4f(color_map(tail.color[0]),
                 color_map(tail.color[1]),
                 color_map(tail.color[2]),
-                EDGE_OPACITY);
+                opacity);
       glVertex3fv(tail.pos);
     }
     glEnd();
